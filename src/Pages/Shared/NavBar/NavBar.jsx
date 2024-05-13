@@ -11,7 +11,7 @@ const NavBar = () => {
         <li><NavLink className='font-medium' to='/contact'>Contact</NavLink></li>
     </>
     return (
-        <div className="md:px-10 lg:px-14">
+        <div className="md:px-10 lg:px-14 lg:pt-2 lg:pb-5">
             <nav className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
