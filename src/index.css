@@ -9,4 +9,10 @@ nav li a.active{
 
 .text-primary{
     color: #ff3811;
+
 }
+.bg-primary{
+    background-color: #ff3811;
+}
+
+:root{--prime: #ff3811}
