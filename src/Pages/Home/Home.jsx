@@ -1,6 +1,11 @@
 import About from "./About/About";
 import Banner from "./Banner/Banner";
+import ContectSection from "./Contect/ContectSection";
+import CoreFeatures from "./CoreFeatures/CoreFeatures";
+import PopularProduct from "./PopularProducts/PopularProduct";
 import Services from "./Services/Services";
+import Team from "./Team/Team";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -8,6 +13,11 @@ const Home = () => {
             <Banner></Banner>
             <About></About>
             <Services></Services>
+            <ContectSection></ContectSection>
+            <PopularProduct></PopularProduct>
+            <Team></Team>
+            <CoreFeatures></CoreFeatures>
+            <Testimonial></Testimonial>
         </div>
     );
 };

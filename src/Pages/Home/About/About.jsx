@@ -4,7 +4,7 @@ import parts from '../../../assets/images/about_us/parts.jpg'
 const About = () => {
     return (
         <div>
-            <div className="md:h-screen py-5 flex items-center justify-center">
+            <div className="md:min-h-screen py-5 flex items-center justify-center">
                 <div className="flex w-full flex-col lg:flex-row">
                     <div className='lg:w-1/2 flex-1 relative'>
                         <img src={person} className="md:w-3/4 rounded-lg object-cover" />
