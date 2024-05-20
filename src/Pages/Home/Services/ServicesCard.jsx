@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ServicesCard = ({ service }) => {
     // console.log(service)
-    const { title, img, price } = service;
+    const {_id,  title, img, price } = service;
     // console.log(service.title)
     return (
         <div>
@@ -15,7 +15,7 @@ const ServicesCard = ({ service }) => {
                     <h2 className="card-title font-bold">{title}</h2>
                     <div className="flex items-center justify-between">
                         <p className="font-medium text-primary">Price: ${price}</p>
-                        <Link className="font-medium text-primary flex justify-end"><FaArrowRight />
+                        <Link to={`/checkout/${_id}`} className="font-medium text-primary flex justify-end p-3 bg-gray-200 rounded-full hover:bg-gray-400"><FaArrowRight />
                         </Link>
                     </div>
                 </div>
