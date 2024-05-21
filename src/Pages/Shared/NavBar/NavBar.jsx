@@ -20,6 +20,7 @@ const NavBar = () => {
         <li><NavLink className='font-medium' to='/blog'>Blog</NavLink></li>
         <li><NavLink className='font-medium' to='/contact'>Contact</NavLink></li>
         <li>{user ? <button onClick={handleLogOut} className='font-medium'>Log Out</button> : <NavLink className='font-medium' to='/login'>Login</NavLink>}</li>
+        <li>{user?.email && <NavLink className='font-medium' to='/bookings'>Bookings</NavLink>}</li>
     </>
     return (
         <div className="md:px-10 lg:px-14 lg:pt-2 lg:pb-5">

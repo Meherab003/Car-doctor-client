@@ -34,7 +34,11 @@ const CheckOut = () => {
             body: JSON.stringify(order)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            alert("Booked!")
+            form.reset();
+        })
     }
     return (
         <div className="lg:px-16">
