@@ -2,29 +2,37 @@ import { useContext, useEffect, useState } from "react";
 import SecondBanner from "../Shared/SecondBanner/SecondBanner";
 import { AuthContext } from "../../Providers/AuthProvider";
 import BookingRow from "./BookingRow";
-import axios from "axios";
+// import axios from "axios";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Bookings = () => {
     const bannerText = "Car Details"
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
+    const axiosSecure = useAxiosSecure();
 
 
-    const url = `http://localhost:5000/bookings?email=${user.email}`;
+    // const url = `https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/bookings?email=${user.email}`;
+    const url = `/bookings?email=${user.email}`;
     useEffect(() => {
         // fetch(url)
         //     .then(res => res.json())
         //     .then(data => setBookings(data))
-        axios.get(url, {withCredentials: true})
-        .then(res => {
-            setBookings(res.data)
-        })
-    }, [url])
+
+
+        // axios.get(url, {withCredentials: true})
+        // .then(res => {
+        //     setBookings(res.data)
+        // })
+
+        axiosSecure.get(url)
+        .then(res => setBookings(res.data))
+    }, [url, axiosSecure])
 
     const handleDelete = id => {
         const proceed = confirm("are you sure  you to delete?");
         if (proceed) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/bookings/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -40,7 +48,7 @@ const Bookings = () => {
     }
 
     const handleConfirm = id => {
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/bookings/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type" : "application/json",

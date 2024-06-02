@@ -1,15 +1,16 @@
 import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import loginPhoto from '../../assets/images/login/login.svg'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+// import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+// import axios from 'axios';
 const Login = () => {
 
     const { login } = useContext(AuthContext);
-    const location = useLocation();
-    const navigate = useNavigate();
-    console.log(location);
+    // const location = useLocation();
+    // const navigate = useNavigate();
+    // console.log(location);
 
 
     const handleLogin = e => {
@@ -23,17 +24,17 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
-                const user = { email };
+                // const user = { email };
 
                 //get access token
-                axios.post(`http://localhost:5000/jwt`, user, {withCredentials: true})
-                    .then(res => {
-                        console.log(res.data)
-                        if (res.data.success) {
-                            navigate(location?.state ? location?.state : '/');
+                // axios.post(`https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/jwt`, user, {withCredentials: true})
+                //     .then(res => {
+                //         console.log(res.data)
+                //         if (res.data.success) {
+                //             navigate(location?.state ? location?.state : '/');
 
-                        }
-                    })
+                //         }
+                //     })
             })
             .catch(err => console.log(err))
     }

@@ -26,7 +26,7 @@ const CheckOut = () => {
         }
         console.log(order)
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/bookings', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

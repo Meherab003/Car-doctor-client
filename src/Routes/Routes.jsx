@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: '/services/:id',
         element: <ServicesPage></ServicesPage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/services/${params.id}`)
       },
       {
         path: '/checkout/:id',
         element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://car-doctor-server-3r62klef4-meherab-hossain-bhuiyans-projects.vercel.app/services/${params.id}`)
       },
       {
         path: "/bookings",

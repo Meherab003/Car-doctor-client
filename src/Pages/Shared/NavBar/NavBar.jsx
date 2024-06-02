@@ -15,10 +15,10 @@ const NavBar = () => {
 
     const navLinks = <>
         <li><NavLink className='font-medium' to='/'>Home</NavLink></li>
-        <li><NavLink className='font-medium' to='/about'>About</NavLink></li>
-        <li><NavLink className='font-medium' to='/services'>Services</NavLink></li>
-        <li><NavLink className='font-medium' to='/blog'>Blog</NavLink></li>
-        <li><NavLink className='font-medium' to='/contact'>Contact</NavLink></li>
+        {/* <li><NavLink className='font-medium' to='/about'>About</NavLink></li> */}
+        {/* <li><NavLink className='font-medium' to='/services'>Services</NavLink></li> */}
+        {/* <li><NavLink className='font-medium' to='/blog'>Blog</NavLink></li> */}
+        {/* <li><NavLink className='font-medium' to='/contact'>Contact</NavLink></li> */}
         <li>{user ? <button onClick={handleLogOut} className='font-medium'>Log Out</button> : <NavLink className='font-medium' to='/login'>Login</NavLink>}</li>
         <li>{user?.email && <NavLink className='font-medium' to='/bookings'>Bookings</NavLink>}</li>
     </>
